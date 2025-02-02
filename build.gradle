@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'me.quickscythe'
-version = "${plugin_version}-${build_status}-B${build_number}"
+version = "${plugin_version}-${build_status}.${build_number}"
 
 repositories {
     mavenCentral()
