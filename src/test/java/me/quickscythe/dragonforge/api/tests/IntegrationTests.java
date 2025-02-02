@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class IntegrationTests {
-    Logger logger = LoggerFactory.getLogger("CoreTests");
+    Logger logger = LoggerFactory.getLogger("IntegrationTests");
 
 
     void destroyIntegration(DragonForgeIntegration integration, String test) {

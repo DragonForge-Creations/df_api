@@ -9,6 +9,7 @@
 package me.quickscythe.dragonforge.api;
 
 import me.quickscythe.dragonforge.api.events.EventHandler;
+import me.quickscythe.dragonforge.api.logger.DragonForgeLogger;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +23,10 @@ import java.util.Comparator;
 public abstract class DragonForgeIntegration {
 
     private final EventHandler handler;
+    private final DragonForgeLogger logger;
 
     public DragonForgeIntegration(){
+        logger = new DragonForgeLogger(this);
         handler = new EventHandler(this);
     }
 
@@ -37,10 +40,12 @@ public abstract class DragonForgeIntegration {
     /**
      * Log a message to the console
      *
-     * @param quiptConfig The config that the message is from
-     * @param s           The message to log
+     * @param tag           The config that the message is from
+     * @param message       The message to log
      */
-    public abstract void log(String quiptConfig, String s);
+    public void log(String tag, String message) {
+        logger.log("[%s] %s".formatted(tag, message));
+    }
 
     /**
      * Get the data folder for the plugin
