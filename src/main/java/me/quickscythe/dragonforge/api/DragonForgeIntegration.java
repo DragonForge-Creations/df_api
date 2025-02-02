@@ -68,7 +68,7 @@ public abstract class DragonForgeIntegration {
         }
     }
 
-    public DragonForgeLogger getLogger() {
+    public DragonForgeLogger logger() {
         return logger;
     }
 
